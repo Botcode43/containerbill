@@ -1,60 +1,36 @@
 package model;
 
-import imp.sellerOperationImp;
+import imp.SellerImpl ;
 
 public class Seller {
-    private int sellerId;
+    private int id;
     private String name;
     private String email;
     private String password;
 
-    
     public Seller() {}
 
-    public Seller(int sellerId, String name, String email, String password) {
-        this.sellerId = sellerId;
+    public Seller(int id, String name, String email, String password) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
     }
 
-  
+   
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
 
-    public int getSellerId() {
-		return sellerId;
-	}
-    
-    public void setSellerId(int sellerId) {
-        this.sellerId = sellerId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
     
     
-	public void insertSeller(Seller Seller) {
-	    new sellerOperationImp().insertSeller(Seller);
+	public void registerSeller(Seller s) {
+	    new SellerImpl ().registerSeller(s);
 	    System.out.println("Returned from operationsimp.insert()");
 	}
 	
